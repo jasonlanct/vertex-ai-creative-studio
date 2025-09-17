@@ -1,0 +1,11 @@
+cd D:\github\vertex-ai-creative-studio\experiments\veo-app
+set REGION=us-central1
+set PROJECT_ID=taipei-digital-imgstudio
+set INITIAL_USER=jason.lan@tradeserv.com
+set DOMAIN_NAME=creativestudio.tdtechservice.com
+terraform init
+terraform apply
+
+
+cd D:\github\vertex-ai-creative-studio
+gcloud run deploy creative-studio --source . --allow-unauthenticated --region us-central1 --service-account taipei-digital-imgstudio-sa@taipei-digital-imgstudio.iam.gserviceaccount.com --update-env-vars=IMAGE_CREATION_BUCKET=creative-studio-image-creation,PROJECT_ID=taipei-digital-imgstudio

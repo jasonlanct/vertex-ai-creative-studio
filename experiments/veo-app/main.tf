@@ -61,10 +61,17 @@ module "project-services" {
   ]
 }
 
+# resource "null_resource" "sleep" {
+#   depends_on = [module.project-services.project_id]
+#   provisioner "local-exec" {
+#     command = "sleep ${var.sleep_time}"
+#   }
+# }
+# this is Windows
 resource "null_resource" "sleep" {
-  depends_on = [module.project-services.project_id]
   provisioner "local-exec" {
-    command = "sleep ${var.sleep_time}"
+    # Using PowerShell
+    command = "powershell.exe Start-Sleep -Seconds 45"
   }
 }
 
