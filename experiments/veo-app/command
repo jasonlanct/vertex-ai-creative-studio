@@ -5,6 +5,7 @@ set INITIAL_USER=jason.lan@tradeserv.com
 set DOMAIN_NAME=creativestudio.tdtechservice.com
 terraform init
 terraform apply
+gcloud builds submit . --project=taipei-digital-imgstudio --gcs-source-staging-dir=gs://run-resources-taipei-digital-imgstudio-us-central1/services/creative-studio --region=us-central1 --service-account=projects/taipei-digital-imgstudio/serviceAccounts/builds-creative-studio@taipei-digital-imgstudio.iam.gserviceaccount.com
 
 
 cd D:\github\vertex-ai-creative-studio
